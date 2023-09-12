@@ -113,12 +113,13 @@ const uranus = creatPlanetFunction(10, uranusTexture, 176, {
 // the neptune
 const neptune = creatPlanetFunction(7, neptuneTexture, 200);
 // the pluto
-const pluto = creatPlanetFunction(2.8, plutoTexture, 250)
-//point light 
+const pluto = creatPlanetFunction(2.8, plutoTexture, 250);
 
+//point light 
 const pointLight = new THREE.PointLight( 0xFFFFFF, 8000, 90000);
 scene.add( pointLight );
 
+//animate function
 function animate() {
 	// self axix rotation
 	sun.rotateY(0.004);
@@ -146,7 +147,7 @@ function animate() {
 	renderer.render( scene, camera );
 }
 renderer.setAnimationLoop( animate );
-
+// window resize 
 window.addEventListener( 'resize', function () {
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
